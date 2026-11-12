@@ -185,4 +185,47 @@ document.addEventListener("DOMContentLoaded", () => {
         demoNotice.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
 
+    /* VÍDEOS DE WORK */
+    const videoModal = document.querySelector("#ao-video-modal");
+    const videoFrame = videoModal?.querySelector("iframe");
+    const videoClose = videoModal?.querySelector(".ao-video-modal__close");
+    const videoTitle = videoModal?.querySelector(".ao-video-modal__title");
+
+    const closeVideo = () => {
+        if (!videoModal || !videoFrame) return;
+        videoModal.classList.remove("is-open");
+        videoModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("ao-video-open");
+        window.setTimeout(() => {
+            videoModal.hidden = true;
+            videoFrame.src = "";
+        }, 250);
+    };
+
+    document.querySelectorAll(".work-video").forEach(card => {
+        card.addEventListener("click", event => {
+            event.preventDefault();
+            if (!videoModal || !videoFrame) return;
+            const videoId = card.dataset.video;
+            const start = card.dataset.start ? `&start=${card.dataset.start}` : "";
+            const label = card.getAttribute("aria-label")?.replace(/^Ver vídeo /, "") || "Vídeo del proyecto";
+            videoFrame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0${start}`;
+            videoFrame.title = label;
+            if (videoTitle) videoTitle.textContent = label;
+            videoModal.hidden = false;
+            videoModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("ao-video-open");
+            requestAnimationFrame(() => videoModal.classList.add("is-open"));
+            videoClose?.focus();
+        });
+    });
+
+    videoClose?.addEventListener("click", closeVideo);
+    videoModal?.addEventListener("click", event => {
+        if (event.target === videoModal) closeVideo();
+    });
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && videoModal?.classList.contains("is-open")) closeVideo();
+    });
+
 });
