@@ -1,0 +1,606 @@
+
+/*
+Theme Name: AlvarOcean Custom
+Author: Codelia Studio
+Description: Tema cinematográfico personalizado para AlvarOcean.
+Version: 1.2.0
+Text Domain: alvarocean
+*/
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("../fonts/Satoshi-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+/* =========================================
+   ALVAROCEAN — GLOBAL DESIGN SYSTEM
+========================================= */
+
+:root {
+    --color-background: #050709;
+    --color-petrol: #071b22;
+    --color-surface: #173641;
+    --color-accent: #9cb6c0;
+    --color-text: #f3f2ef;
+    --color-muted: #a7b3b8;
+    --color-border: rgba(243, 242, 239, 0.22);
+
+    --page-gutter: 50px;
+    --page-width: calc(100% - (var(--page-gutter) * 2));
+
+    color-scheme: dark;
+}
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--color-background);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: "Satoshi", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+main,
+#page,
+.site,
+.site-content {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+main {
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+}
+
+/* =========================================
+   GLOBAL CONTAINER
+========================================= */
+
+.ao-container,
+.site-container,
+.content-container {
+    width: var(--page-width);
+    max-width: none;
+    margin-inline: auto;
+}
+
+/* =========================================
+   DESKTOP
+   50px por cada lado
+========================================= */
+
+@media (min-width: 1025px) {
+    :root {
+        --page-gutter: 50px;
+    }
+}
+
+/* =========================================
+   TABLET
+   25px por cada lado
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --page-gutter: 25px;
+    }
+}
+
+/* =========================================
+   MOBILE
+   15px por cada lado
+========================================= */
+
+@media (max-width: 767px) {
+    :root {
+        --page-gutter: 15px;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+
+/* =========================================
+   ALVAROCEAN — HEADER
+========================================= */
+
+.ao-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    z-index: 1000;
+    background: transparent;
+    color: #f3f2ef;
+}
+
+.ao-header__inner {
+    width: calc(100% - (var(--page-gutter) * 2));
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ao-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3f2ef;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.ao-logo:hover {
+    opacity: 0.65;
+    color: #f3f2ef;
+}
+
+.ao-logo svg {
+    display: block;
+    width: 44px;
+    height: auto;
+}
+
+/* Navegación desktop */
+
+.ao-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.ao-nav__link {
+    position: relative;
+    display: inline-block;
+    padding: 12px 0;
+    color: #f3f2ef;
+    font-family: "Satoshi", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ao-nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f3f2ef;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.ao-nav__link:hover,
+.ao-nav__link:focus-visible {
+    color: #f3f2ef;
+}
+
+.ao-nav__link:hover::after,
+.ao-nav__link:focus-visible::after,
+.ao-nav__link.is-active::after {
+    transform: scaleX(1);
+}
+
+/* Menú hamburguesa */
+
+.ao-menu-toggle {
+    display: none;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    background: transparent;
+    border: 0;
+    color: #f3f2ef;
+    z-index: 1002;
+}
+
+.ao-menu-toggle span {
+    position: absolute;
+    left: 9px;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.ao-menu-toggle span:first-child {
+    top: 16px;
+}
+
+.ao-menu-toggle span:last-child {
+    top: 25px;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .ao-header {
+        height: 70px;
+    }
+
+    .ao-nav {
+        gap: 25px;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 767px) {
+    .ao-header {
+        height: 66px;
+    }
+
+    .ao-logo svg {
+        width: 39px;
+    }
+
+    .ao-menu-toggle {
+        display: block;
+    }
+
+    .ao-nav {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        padding: 110px var(--page-gutter) 50px;
+        background: #050b0e;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition:
+            opacity 0.35s ease,
+            visibility 0.35s ease,
+            transform 0.35s ease;
+        z-index: 1001;
+    }
+
+    .ao-header.is-menu-open .ao-nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .ao-nav__link {
+        font-size: clamp(24px, 7vw, 38px);
+        font-weight: 300;
+        letter-spacing: 4px;
+    }
+
+    .ao-header.is-menu-open .ao-menu-toggle span:first-child {
+        top: 21px;
+        transform: rotate(45deg);
+    }
+
+    .ao-header.is-menu-open .ao-menu-toggle span:last-child {
+        top: 21px;
+        transform: rotate(-45deg);
+    }
+
+    body.ao-menu-open {
+        overflow: hidden;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ao-header *,
+    .ao-header *::before,
+    .ao-header *::after {
+        transition: none !important;
+    }
+}
+
+
+
+/* HEADER FIJO Y DINÁMICO */
+
+.ao-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease;
+}
+
+.ao-header.is-scrolled {
+    background: rgba(7, 27, 34, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(243, 242, 239, 0.12);
+}
+
+body.admin-bar .ao-header {
+    top: 32px;
+}
+
+@media (max-width: 782px) {
+    body.admin-bar .ao-header {
+        top: 46px;
+    }
+}
+
+@media (max-width: 600px) {
+    body.admin-bar .ao-header.is-scrolled {
+        top: 0;
+    }
+}
+
+
+/* =====================================
+   ALVAROCEAN — FOOTER
+===================================== */
+
+.ao-footer {
+    width: 100%;
+    background: #071b22;
+    color: #f3f2ef;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.ao-footer__container {
+    width: calc(100% - (var(--page-gutter) * 2));
+    margin: 0 auto;
+}
+
+.ao-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: clamp(25px, 4vw, 80px);
+    padding: 85px 0 75px;
+}
+
+.ao-footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.ao-footer__logo {
+    color: #f3f2ef;
+    font-size: clamp(22px, 2.4vw, 36px);
+    font-weight: 300;
+    letter-spacing: .15em;
+    line-height: 1.2;
+}
+
+.ao-footer__tagline {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    color: #9cb6c0;
+}
+
+.ao-footer__description {
+    max-width: 260px;
+    margin: 8px 0 0;
+    color: #aebfc5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ao-footer__column h3,
+.ao-footer__heading {
+    margin: 4px 0 12px;
+    color: #f3f2ef;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.ao-footer__column > a:not(.ao-footer__logo) {
+    color: #b4c8cf;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .25s ease, transform .25s ease;
+}
+
+.ao-footer__column > a:hover {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.ao-footer__column > p:not(.ao-footer__tagline) {
+    color: #aebfc5;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.ao-footer__contact {
+    border-bottom: 1px solid #9cb6c0;
+    padding-bottom: 6px;
+}
+
+.ao-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 0;
+    border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.ao-footer__bottom span,
+.ao-footer__bottom a {
+    color: #9cb6c0;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+}
+
+.ao-footer__bottom a:hover {
+    color: #fff;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+    .ao-footer__grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 45px;
+        padding: 65px 0;
+    }
+}
+
+/* MÓVIL */
+
+@media (max-width: 767px) {
+    .ao-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+        padding: 55px 0;
+    }
+
+    .ao-footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .ao-footer__logo {
+        font-size: 27px;
+    }
+
+    .ao-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 25px 0;
+    }
+
+    .ao-footer__bottom span,
+    .ao-footer__bottom a {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    .ao-footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ao-footer__brand {
+        grid-column: auto;
+    }
+}
+
+/* Variables shared with the home component stylesheet. */
+:root {
+    --bg: var(--color-background);
+    --petrol: var(--color-petrol);
+    --surface: var(--color-surface);
+    --accent: var(--color-accent);
+    --white: var(--color-text);
+    --muted: var(--color-muted);
+    --line: var(--color-border);
+}
+
+.container {
+    width: min(90%, 1680px);
+    margin-inline: auto;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+.hero{height:clamp(700px,43vw,90vh);min-height:430px;position:relative;display:grid;place-items:center;overflow:hidden;background:var(--petrol)}.hero-bg{position:absolute;inset:-4%;background-size:cover;background-position:center;filter:blur(5px) brightness(.68);transform:scale(1.07);animation:heroFloat 18s ease-in-out infinite alternate}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,12,16,.5),rgba(0,16,21,.24),rgba(0,10,14,.5)),linear-gradient(0deg,rgba(0,0,0,.28),transparent 65%)}.hero-content{position:relative;text-align:center;padding:75px 20px 0}.hero h1{font:700 clamp(32px,4vw,62px)/1.2 Satoshi,sans-serif;letter-spacing:clamp(.25em,1.35vw,.58em);margin:0 0 22px;padding-left:.45em;text-transform: uppercase;}.hero-subtitle{font:400 12px Satoshi,sans-serif;letter-spacing:.72em;margin:0}.hero-rule,.short-rule{display:block;width:32px;height:1px;background:#d7e4e8;margin:34px auto 29px}.outline-button{border:1px solid rgba(244,250,252,.6);min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:0 32px;font-size:11px;font-weight:700;letter-spacing:.2em;transition:background .25s,color .25s,border-color .25s}.outline-button:hover{background:var(--white);color:var(--bg);border-color:var(--white)}.hero-button{min-width:300px}
+
+
+
+.ao-contact__fields input{
+    background: transparent;
+    color:#fff;
+    border:0px;
+    border-bottom: 1px solid #fff;
+}
+
+.ao-contact__fields{
+    display: flex;
+    flex-direction: column;
+}
