@@ -662,7 +662,7 @@ body.ao-video-open {
 
 .ao-weddings__content {
     width: 600px;
-    max-width: 100%;
+    max-width: 600px;
 }
 
 .ao-weddings__image--logo {
@@ -684,7 +684,7 @@ body.ao-video-open {
 }
 
 .ao-weddings__content {
-    max-width: 440px;
+    max-width: 600px;
 }
 
 .ao-weddings__content h2 {
