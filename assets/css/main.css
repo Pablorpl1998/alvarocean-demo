@@ -661,6 +661,29 @@ body.ao-video-open {
 }
 
 .ao-weddings__content {
+    width: 600px;
+    max-width: 100%;
+}
+
+.ao-weddings__image--logo {
+    background: transparent;
+    max-width: 50%;
+    margin: auto;
+}
+
+@media (max-width: 1024px) {
+    .ao-weddings__image--logo {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 640px) {
+    .ao-weddings__image--logo {
+        max-width: 100%;
+    }
+}
+
+.ao-weddings__content {
     max-width: 440px;
 }
 
