@@ -104,7 +104,7 @@
       <a class="social-card social-reel reveal" data-instagram="Dbdt_inIKA2" href="https://www.instagram.com/reel/Dbdt_inIKA2/" target="_blank" rel="noopener noreferrer" aria-label="Ver reel Alejandro Mudarra"><img src="assets/images/social-05.jpg" alt="Reel de Alejandro Mudarra" loading="lazy"><span class="play-icon" aria-hidden="true">▶</span></a>
       <a class="social-card social-reel reveal" data-instagram="DaSD2-xlfwf" href="https://www.instagram.com/reel/DaSD2-xlfwf/" target="_blank" rel="noopener noreferrer" aria-label="Ver reel Clínica Dental"><img src="assets/images/social-06.jpg" alt="Reel de Clínica Dental" loading="lazy"><span class="play-icon" aria-hidden="true">▶</span></a>
     </div>
-    <a class="bottom-link" href="#social">VER CONTENIDO SOCIAL &nbsp; ⟶</a>
+    <a class="bottom-link" href="https://www.instagram.com/alvarocean/" target="_blank" rel="noopener noreferrer">VER CONTENIDO SOCIAL &nbsp; ⟶</a>
   </section>
 
   <section class="ao-services container section-rule" id="services" aria-labelledby="services-title">
@@ -142,9 +142,9 @@
         <p class="ao-contact__description">Cada proyecto comienza con una historia. Hablemos de la tuya y hagamos que cobre vida.</p>
         <div class="ao-contact__location"><span class="ao-contact__location-dot" aria-hidden="true"></span> SEVILLA · ESPAÑA</div>
         <div class="ao-contact__methods">
-          <a class="ao-contact__method" href="#ao-contact-form"><span class="ao-contact__method-icon" aria-hidden="true">✉</span><span class="ao-contact__method-copy"><h3>correo electrónico</h3><span>Escríbeme mediante el formulario</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
-          <a class="ao-contact__method" href="#contact"><span class="ao-contact__method-icon" aria-hidden="true">☎</span><span class="ao-contact__method-copy"><h3>teléfono</h3><span>Déjame tu número y te llamaré</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
-          <a class="ao-contact__method" href="#contact"><span class="ao-contact__method-icon" aria-hidden="true">↗</span><span class="ao-contact__method-copy"><h3>whatsapp</h3><span>Solicita que hablemos por WhatsApp</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
+          <a class="ao-contact__method" href="mailto:info@alvarocean.com"><span class="ao-contact__method-icon" aria-hidden="true">✉</span><span class="ao-contact__method-copy"><h3>correo electrónico</h3><span>info@alvarocean.com</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
+          <a class="ao-contact__method" href="tel:+34655587255"><span class="ao-contact__method-icon" aria-hidden="true">☎</span><span class="ao-contact__method-copy"><h3>teléfono</h3><span>655 587 255</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
+          <a class="ao-contact__method" href="https://api.whatsapp.com/send/?phone=655587255&amp;text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20uno%20de%20tus%20servicios.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer"><span class="ao-contact__method-icon" aria-hidden="true">↗</span><span class="ao-contact__method-copy"><h3>whatsapp</h3><span>Escríbeme directamente</span></span><span class="ao-contact__method-arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="ao-contact__form-wrap">
@@ -157,7 +157,7 @@
             <div class="ao-contact__field"><label for="ao-project">TIPO DE PROYECTO</label><select id="ao-project"><option value="">Selecciona una opción</option><option>Producción audiovisual</option><option>Fotografía</option><option>Contenido para redes</option><option>Otro proyecto</option></select></div>
             <div class="ao-contact__field ao-contact__field--full"><label for="ao-message">CUÉNTAME TU HISTORIA *</label><textarea id="ao-message" rows="4" placeholder="Cuéntame qué tienes en mente..." required></textarea></div>
           </div>
-          <div class="ao-contact__actions"><label class="ao-contact__privacy"><input type="checkbox" required><span>He leído y acepto la <a href="#contact">política de privacidad</a>.</span></label><button type="submit" class="ao-contact__submit">ENVIAR MENSAJE <span aria-hidden="true">↗</span></button></div>
+          <div class="ao-contact__actions"><label class="ao-contact__privacy"><input type="checkbox" required><span>He leído y acepto la <a href="#contact" data-policy="privacy">política de privacidad</a>.</span></label><button type="submit" class="ao-contact__submit">ENVIAR MENSAJE <span aria-hidden="true">↗</span></button></div>
           <p class="ao-contact__notice ao-demo-form-notice" role="status" hidden></p>
         </form>
       </div>
@@ -175,13 +175,22 @@
   </div>
 </div>
 
+<div class="ao-policy-modal" id="ao-policy-modal" hidden aria-hidden="true">
+  <div class="ao-policy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="ao-policy-title">
+    <button class="ao-policy-modal__close" type="button" aria-label="Cerrar política">×</button>
+    <p class="ao-video-modal__eyebrow">ALVAROCEAN / INFORMACIÓN LEGAL</p>
+    <h2 class="ao-policy-modal__title" id="ao-policy-title">Aviso legal</h2>
+    <article class="ao-policy-modal__content" id="ao-policy-content"></article>
+  </div>
+</div>
+
 <footer class="ao-footer" id="footer-contact">
   <div class="ao-footer__container"><div class="ao-footer__grid">
     <div class="ao-footer__column ao-footer__brand"><a href="#top" class="ao-footer__logo">ALVAROCEAN</a><p class="ao-footer__tagline">FILMMAKER &amp; VISUAL STORYTELLER</p><p class="ao-footer__description">Capturing stories through film,<br>photography and creativity.</p></div>
     <nav class="ao-footer__column" aria-label="Footer navigation"><p class="ao-footer__heading">EXPLORE</p><a href="#work">Work</a><a href="#about">About</a><a href="#social">Social</a><a href="#contact">Contact</a></nav>
-    <div class="ao-footer__column"><p class="ao-footer__heading">SOCIAL</p><a href="#social">Instagram ↗</a><a href="#social">Vimeo ↗</a><a href="#social">YouTube ↗</a></div>
+    <div class="ao-footer__column"><p class="ao-footer__heading">SOCIAL</p><a href="https://www.instagram.com/alvarocean/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="#social">Vimeo ↗</a><a href="#social">YouTube ↗</a></div>
     <div class="ao-footer__column"><p class="ao-footer__heading">CONTACT</p><p>Have a project in mind?</p><a class="ao-footer__contact" href="#contact">Let's talk ↗</a></div>
-  </div><div class="ao-footer__bottom"><span>© 2026 ALVAROCEAN. ALL RIGHTS RESERVED.</span><a href="https://codeliastudio.com/" target="_blank" rel="noopener noreferrer">MADE BY CODELIA STUDIO ↗</a></div></div>
+  </div><div class="ao-footer__bottom"><span>© 2026 ALVAROCEAN. ALL RIGHTS RESERVED.</span><span class="ao-footer__legal"><button type="button" data-policy="legal">Aviso legal</button><button type="button" data-policy="cookies">Cookies</button><button type="button" data-policy="privacy">Privacidad</button></span><a href="https://codeliastudio.com/" target="_blank" rel="noopener noreferrer">MADE BY CODELIA STUDIO ↗</a></div></div>
 </footer>
 <script src="assets/js/main.js"></script>
 </body>

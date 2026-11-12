@@ -248,4 +248,49 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "Escape" && videoModal?.classList.contains("is-open")) closeVideo();
     });
 
+    /* POLÍTICAS EN POPUP */
+    const policyModal = document.querySelector("#ao-policy-modal");
+    const policyTitle = policyModal?.querySelector("#ao-policy-title");
+    const policyContent = policyModal?.querySelector("#ao-policy-content");
+    const policyClose = policyModal?.querySelector(".ao-policy-modal__close");
+    const policies = {
+        legal: {
+            title: "Aviso legal",
+            html: `<p>En cumplimiento de la Ley 34/2002 (LSSI-CE), la titularidad de este sitio web corresponde a Álvaro Pita Ramírez.</p><p><strong>NIF:</strong> 53769248D<br><strong>Email:</strong> info@alvarocean.com<br><strong>Teléfono:</strong> 655 587 255</p><p>El acceso y uso de alvarocean.com atribuye la condición de usuario y supone la aceptación de las condiciones de uso aplicables. Los contenidos, imágenes, vídeos, textos, logotipos y demás elementos del sitio están protegidos por la normativa de propiedad intelectual.</p>`
+        },
+        cookies: {
+            title: "Política de cookies",
+            html: `<p>Este sitio puede utilizar cookies técnicas necesarias para su funcionamiento y, si se activan servicios externos, cookies de terceros asociadas a dichos servicios.</p><p>Las cookies pueden rechazarse o eliminarse desde la configuración del navegador. El sitio seguirá siendo accesible, aunque algunas funciones podrían verse limitadas.</p><p>Antes de incorporar analítica, publicidad o integraciones que requieran consentimiento, deberá configurarse el aviso y el mecanismo de preferencias correspondiente.</p>`
+        },
+        privacy: {
+            title: "Política de privacidad",
+            html: `<p><strong>Responsable:</strong> Álvaro Pita Ramírez · NIF 53769248D<br><strong>Email:</strong> info@alvarocean.com<br><strong>Teléfono:</strong> 655 587 255<br><strong>Dirección:</strong> C/ Pablo Picasso 12</p><p>Los datos enviados mediante el formulario se tratarán para atender consultas y solicitudes de presupuesto. La base jurídica es el consentimiento del usuario, que puede retirarse en cualquier momento.</p><p>Los datos se conservarán durante el tiempo necesario para atender la solicitud y, como máximo, durante 18 meses, salvo obligación legal. El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a info@alvarocean.com.</p><p>También puede reclamar ante la Agencia Española de Protección de Datos: <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">aepd.es</a>.</p>`
+        }
+    };
+
+    const closePolicy = () => {
+        if (!policyModal) return;
+        policyModal.classList.remove("is-open");
+        policyModal.setAttribute("aria-hidden", "true");
+        window.setTimeout(() => { policyModal.hidden = true; }, 220);
+    };
+
+    document.querySelectorAll("[data-policy]").forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+            const policy = policies[link.dataset.policy];
+            if (!policyModal || !policy) return;
+            policyTitle.textContent = policy.title;
+            policyContent.innerHTML = policy.html;
+            policyModal.hidden = false;
+            policyModal.setAttribute("aria-hidden", "false");
+            requestAnimationFrame(() => policyModal.classList.add("is-open"));
+            policyClose?.focus();
+        });
+    });
+    policyClose?.addEventListener("click", closePolicy);
+    policyModal?.addEventListener("click", event => { if (event.target === policyModal) closePolicy(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && policyModal?.classList.contains("is-open")) closePolicy(); });
+
 });
