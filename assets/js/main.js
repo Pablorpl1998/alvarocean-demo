@@ -240,50 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.querySelectorAll(".social-reel").forEach(card => {
-        card.addEventListener("click", event => {
-            if (card.classList.contains("is-playing")) {
-                event.preventDefault();
-                return;
-            }
-            event.preventDefault();
-            const reelId = card.dataset.instagram;
-            const label = card.getAttribute("aria-label")?.replace(/^Ver reel /, "") || "Reel de Instagram";
-            const instagramUrl = `https://www.instagram.com/reel/${encodeURIComponent(reelId)}/`;
-            const image = card.querySelector("img");
-            const playIcon = card.querySelector(".play-icon");
-            const frame = document.createElement("iframe");
-            const fallback = document.createElement("span");
-
-            frame.src = `${instagramUrl}embed`;
-            frame.title = label;
-            frame.loading = "lazy";
-            frame.allow = "autoplay; encrypted-media; picture-in-picture";
-            frame.setAttribute("allowfullscreen", "");
-
-            fallback.className = "social-card__fallback";
-            fallback.textContent = "VER EN INSTAGRAM ↗";
-            fallback.setAttribute("role", "link");
-            fallback.tabIndex = 0;
-            fallback.addEventListener("click", fallbackEvent => {
-                fallbackEvent.preventDefault();
-                fallbackEvent.stopPropagation();
-                window.open(instagramUrl, "_blank", "noopener,noreferrer");
-            });
-            fallback.addEventListener("keydown", fallbackEvent => {
-                if (fallbackEvent.key === "Enter" || fallbackEvent.key === " ") {
-                    fallbackEvent.preventDefault();
-                    fallback.click();
-                }
-            });
-
-            image?.remove();
-            playIcon?.remove();
-            card.append(frame, fallback);
-            card.classList.add("is-playing");
-        });
-    });
-
     videoClose?.addEventListener("click", closeVideo);
     videoModal?.addEventListener("click", event => {
         if (event.target === videoModal) closeVideo();
