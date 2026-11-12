@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0${start}`,
                 label,
                 fallbackHref: `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`,
-                platform: "ALVAROCEAN / WORK",
+                platform: "ALVAROCEAN / TRABAJO",
                 fallbackLabel: "VER EN YOUTUBE ↗"
             });
         });

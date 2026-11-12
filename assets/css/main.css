@@ -1082,4 +1082,28 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
 }
 
+/* Ajustes finales de interacción y responsive */
+.social-card .play-icon {
+  inset: 50% auto auto 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 50%;
+  background: rgba(4,16,20,.38);
+  font-size: 16px;
+  line-height: 1;
+  text-indent: 2px;
+  transform: translate(-50%,-50%);
+  transition: transform .3s ease, background .3s ease;
+}
+.social-card:hover .play-icon { background: rgba(4,16,20,.68); transform: translate(-50%,-50%) scale(1.08); }
+.ao-footer__logo img { display: block; width: 68px; height: 68px; object-fit: contain; }
+@media (max-width: 640px) {
+  .ao-video-modal { padding: 12px; }
+  .ao-video-modal__dialog { width: 100%; padding: 18px; }
+  .ao-video-modal__title { margin-bottom: 15px; }
+}
+
 
