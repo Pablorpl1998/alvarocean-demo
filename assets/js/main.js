@@ -190,6 +190,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoFrame = videoModal?.querySelector("iframe");
     const videoClose = videoModal?.querySelector(".ao-video-modal__close");
     const videoTitle = videoModal?.querySelector(".ao-video-modal__title");
+    const videoPlatform = videoModal?.querySelector("#ao-video-platform");
+    const videoFallback = videoModal?.querySelector("#ao-video-fallback");
+    const videoFrameWrap = videoModal?.querySelector(".ao-video-modal__frame");
+
+    const openVideoModal = ({ src, label, fallbackHref, platform, fallbackLabel, social = false }) => {
+        if (!videoModal || !videoFrame) return;
+        videoFrame.src = src;
+        videoFrame.title = label;
+        if (videoTitle) videoTitle.textContent = label;
+        if (videoPlatform) videoPlatform.textContent = platform;
+        if (videoFallback) {
+            videoFallback.href = fallbackHref;
+            videoFallback.textContent = fallbackLabel;
+        }
+        videoFrameWrap?.classList.toggle("ao-video-modal__frame--social", social);
+        videoModal.hidden = false;
+        videoModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("ao-video-open");
+        requestAnimationFrame(() => videoModal.classList.add("is-open"));
+        videoClose?.focus();
+    };
 
     const closeVideo = () => {
         if (!videoModal || !videoFrame) return;
@@ -209,14 +230,30 @@ document.addEventListener("DOMContentLoaded", () => {
             const videoId = card.dataset.video;
             const start = card.dataset.start ? `&start=${card.dataset.start}` : "";
             const label = card.getAttribute("aria-label")?.replace(/^Ver vídeo /, "") || "Vídeo del proyecto";
-            videoFrame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0${start}`;
-            videoFrame.title = label;
-            if (videoTitle) videoTitle.textContent = label;
-            videoModal.hidden = false;
-            videoModal.setAttribute("aria-hidden", "false");
-            document.body.classList.add("ao-video-open");
-            requestAnimationFrame(() => videoModal.classList.add("is-open"));
-            videoClose?.focus();
+            openVideoModal({
+                src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0${start}`,
+                label,
+                fallbackHref: `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`,
+                platform: "ALVAROCEAN / WORK",
+                fallbackLabel: "VER EN YOUTUBE ↗"
+            });
+        });
+    });
+
+    document.querySelectorAll(".social-reel").forEach(card => {
+        card.addEventListener("click", event => {
+            event.preventDefault();
+            const reelId = card.dataset.instagram;
+            const label = card.getAttribute("aria-label")?.replace(/^Ver reel /, "") || "Reel de Instagram";
+            const instagramUrl = `https://www.instagram.com/reel/${encodeURIComponent(reelId)}/`;
+            openVideoModal({
+                src: `${instagramUrl}embed`,
+                label,
+                fallbackHref: instagramUrl,
+                platform: "ALVAROCEAN / SOCIAL",
+                fallbackLabel: "VER EN INSTAGRAM ↗",
+                social: true
+            });
         });
     });
 
