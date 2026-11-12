@@ -643,6 +643,23 @@ body.ao-video-open {
     transform: scale(1.035);
 }
 
+.ao-weddings__image--logo {
+    display: grid;
+    place-items: center;
+    padding: clamp(28px, 6vw, 74px);
+}
+
+.ao-weddings__image--logo a,
+.ao-weddings__image--logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.ao-weddings__image--logo img {
+    object-fit: contain;
+    filter: none;
+}
+
 .ao-weddings__content {
     max-width: 440px;
 }
