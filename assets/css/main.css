@@ -677,6 +677,13 @@ body.ao-video-open {
     }
 }
 
+@media (max-width: 768px) {
+    .ao-weddings__content {
+        width: auto;
+        max-width: none;
+    }
+}
+
 .ao-weddings__content {
     max-width: 600px;
 }
