@@ -50,10 +50,22 @@
     cursor: pointer;
 }
 
+.social-card.is-playing {
+    grid-column: span 2;
+    aspect-ratio: .8;
+}
+
 .social-card__fallback:hover,
 .social-card__fallback:focus {
     color: #9cb6c0;
     outline: 1px solid #9cb6c0;
+}
+
+@media (max-width: 640px) {
+    .social-card.is-playing {
+        grid-column: 1 / -1;
+        aspect-ratio: .78;
+    }
 }
 
 
