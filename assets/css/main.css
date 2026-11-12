@@ -162,7 +162,7 @@
     color-scheme: dark;
     caret-color: #dce7e9;
     font: inherit;
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
     box-shadow: none;
     transition: border-color .3s ease, color .3s ease;
@@ -522,7 +522,7 @@ body.ao-video-open {
 }
 
 .ao-footer__legal { display: inline-flex; gap: 14px; align-items: center; }
-.ao-footer__legal button { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.ao-footer__legal button { -webkit-appearance: none; appearance: none; border: 0; border-radius: 0; padding: 0; background: transparent; color: #9cb6c0; -webkit-text-fill-color: #9cb6c0; font: inherit; font-size: 10px; letter-spacing: 1.2px; text-decoration: none; cursor: pointer; }
 .ao-footer__legal button:hover { color: #f3f2ef; }
 .ao-policy-modal { position: fixed; inset: 0; z-index: 3100; display: grid; place-items: center; padding: 18px; background: rgba(0,8,11,.84); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .22s ease, visibility .22s ease; }
 .ao-policy-modal.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
@@ -779,7 +779,7 @@ body.ao-video-open {
   border-top:1px solid rgba(156,182,192,.2);color:#f3f2ef;text-decoration:none
 }
 .ao-contact .ao-contact__method:last-child{border-bottom:1px solid rgba(156,182,192,.2)}
-.ao-contact__method-icon{display:grid;place-items:center;flex:none;width:32px;height:32px;border:1px solid rgba(156,182,192,.3);border-radius:50%;color:#9cb6c0;font-size:13px}
+.ao-contact__method-icon{display:grid;place-items:center;flex:none;width:32px;height:32px;border:1px solid rgba(156,182,192,.3);border-radius:50%;color:#9cb6c0;font-size:13px}.ao-contact__method-icon svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .ao-contact__method-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
 .ao-contact__method-copy h3{margin:0;color:#f3f2ef;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 .ao-contact__method-copy > span{color:#91aab2;font-size:11px;line-height:1.45}
