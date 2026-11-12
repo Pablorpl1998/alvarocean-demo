@@ -878,6 +878,145 @@ body.ao-video-open {
   font-size:clamp(13px,1.2vw,16px);font-weight:500;line-height:1.6
 }
 
+/* Sobre mí: composición editorial de tres columnas */
+.about-section {
+  display: block;
+  min-height: 0;
+  padding-top: 48px !important;
+  padding-bottom: 68px !important;
+}
+.about-section__header {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-bottom: 38px;
+}
+.about-section__header .eyebrow {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #f3f2ef;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.about-section__header > span {
+  width: 100%;
+  height: 1px;
+  background: rgba(243,242,239,.55);
+}
+.about-section__body {
+  display: grid;
+  grid-template-columns: minmax(220px, .9fr) minmax(220px, .8fr) minmax(250px, .86fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: center;
+}
+.about-section .about-photo {
+  height: 335px;
+  overflow: hidden;
+}
+.about-section .about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: grayscale(1) contrast(1.04);
+}
+.about-section__statement {
+  padding-right: clamp(24px, 3vw, 48px);
+  border-right: 1px solid rgba(243,242,239,.55);
+}
+.about-section__statement p {
+  margin: 0;
+  color: #f3f2ef;
+  font-size: clamp(25px, 2.4vw, 39px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+.about-section__statement .short-rule {
+  margin: 32px 0 0;
+  background: #f3f2ef;
+}
+.about-section__copy {
+  color: #d2d9dc;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.about-section__copy p {
+  margin: 0 0 25px;
+}
+.about-section__copy p:last-child {
+  margin-bottom: 0;
+}
+.about-section__quote {
+  margin: 40px auto 0;
+  text-align: center;
+}
+.about-section__quote p {
+  margin: 0;
+  color: #f3f2ef;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 43px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.about-section__quote .short-rule {
+  margin: 28px auto 0;
+  background: #f3f2ef;
+}
+
+@media (max-width: 900px) {
+  .about-section__body {
+    grid-template-columns: minmax(190px, .85fr) minmax(220px, 1fr);
+  }
+  .about-section__statement {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .about-section__copy {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding-top: 35px !important;
+    padding-bottom: 55px !important;
+  }
+  .about-section__header {
+    gap: 18px;
+    margin-bottom: 25px;
+  }
+  .about-section__header .eyebrow {
+    font-size: 11px;
+  }
+  .about-section__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-section .about-photo {
+    height: 285px;
+  }
+  .about-section__statement,
+  .about-section__copy {
+    grid-column: auto;
+  }
+  .about-section__statement {
+    border-right: 0;
+  }
+  .about-section__statement p {
+    font-size: 31px;
+  }
+  .about-section__quote {
+    margin-top: 38px;
+  }
+  .about-section__quote p {
+    font-size: 29px;
+  }
+}
+
 /* Tipografía global Satoshi: títulos semánticos y titulares visuales en bold, sin cursiva. */
 body,
 button,
