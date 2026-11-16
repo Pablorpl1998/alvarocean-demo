@@ -842,7 +842,7 @@ body.ao-video-open {
   .ao-weddings__primary{width:100%;max-width:340px}
   .ao-services{padding-top:45px;padding-bottom:55px}
   .ao-services__top{grid-template-columns:1fr;gap:30px;margin-bottom:30px}
-  .ao-services__top h2{font-size:clamp(48px,14vw,76px);line-height:.92;letter-spacing:-2px}
+  .ao-services__top h2{font-size:clamp(40px,11.5vw,60px);line-height:.94;letter-spacing:-1.8px}
   .ao-services__lead{padding-top:0;text-align:left}
   .ao-services__list{justify-items:start}
   .ao-services__feature{aspect-ratio:1.35;margin-bottom:10px}
