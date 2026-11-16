@@ -1139,6 +1139,11 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
 }
 
+.hero h1 {
+  font-family: Swiss, Satoshi, Arial, sans-serif;
+  text-transform: none;
+}
+
 /* Ajustes finales de interacción y responsive */
 .social-card .play-icon {
   inset: 50% auto auto 50%;
