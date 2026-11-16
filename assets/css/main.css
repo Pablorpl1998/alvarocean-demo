@@ -783,12 +783,10 @@ body.ao-video-open {
 
 /* Qué hago: tres tarjetas editoriales */
 .ao-services{padding-top:60px;padding-bottom:75px}
-.ao-services__top{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);align-items:end;gap:40px;margin-bottom:26px}
-.ao-services__lead{margin:0;color:#f3f2ef;font-size:clamp(18px,2.2vw,28px);font-weight:300;line-height:1.2;text-align:right}
-.ao-services__lead > p{margin:0}
-.ao-services__list{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 18px;max-width:560px;margin:18px 0 0 auto;padding:0;list-style:none;color:#9cb6c0;font-size:12px;line-height:1.7;letter-spacing:.04em}
-.ao-services__list li{position:relative}
-.ao-services__list li:not(:last-child)::after{position:absolute;right:-12px;color:rgba(220,233,236,.42);content:"/"}
+.ao-services__top{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);align-items:start;gap:40px;margin-bottom:62px}
+.ao-services__top h2{margin:12px 0 0;color:#f3f2ef;font-size:clamp(54px,5.2vw,92px);font-weight:700;line-height:.9;letter-spacing:-.065em}
+.ao-services__lead{margin:0;padding-top:98px;color:#f3f2ef;text-align:right}
+.ao-services__list{display:grid;gap:7px;justify-items:end;margin:0;padding:0;list-style:none;color:#f3f2ef;font-size:12px;font-weight:700;line-height:1.2;text-transform:uppercase}
 .ao-services__feature{position:relative;aspect-ratio:2.35;overflow:hidden;margin-bottom:14px;background:#0b171c}
 .ao-services__feature::after{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.28),transparent 55%,rgba(0,0,0,.2));content:"";pointer-events:none}
 .ao-services__feature img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.04);transition:transform .7s ease,filter .4s ease}
@@ -843,10 +841,10 @@ body.ao-video-open {
   .ao-weddings__actions{align-items:flex-start;flex-direction:column;gap:17px}
   .ao-weddings__primary{width:100%;max-width:340px}
   .ao-services{padding-top:45px;padding-bottom:55px}
-  .ao-services__top{grid-template-columns:1fr;gap:12px}
-  .ao-services__lead{text-align:left}
-  .ao-services__list{justify-content:flex-start;margin-left:0}
-  .ao-services__list li:not(:last-child)::after{right:-12px}
+  .ao-services__top{grid-template-columns:1fr;gap:30px;margin-bottom:30px}
+  .ao-services__top h2{font-size:clamp(48px,14vw,76px)}
+  .ao-services__lead{padding-top:0;text-align:left}
+  .ao-services__list{justify-items:start}
   .ao-services__feature{aspect-ratio:1.35;margin-bottom:10px}
   .ao-services .ao-services__grid{grid-template-columns:1fr;gap:10px}
   .ao-service-card{min-height:220px;padding:22px}
