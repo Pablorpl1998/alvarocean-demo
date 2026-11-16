@@ -863,6 +863,11 @@ body.ao-video-open {
 /* ALVAROCEAN — Restauración de jerarquía visual sin alterar los H SEO. */
 
 /* Sobre mí: antes se estilaba .about-copy h2, ahora es un párrafo. */
+.about-section .about-photo {
+  height: auto;
+  overflow: hidden;
+}
+
 .about-copy .about-display-title {
   margin: 24px 0 0;
   color: #f3f2ef;
