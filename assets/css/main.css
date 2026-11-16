@@ -1008,7 +1008,7 @@ body.ao-video-open {
   align-items: center;
 }
 .about-section .about-photo {
-  height: 335px;
+  height: auto;
   overflow: hidden;
 }
 .about-section .about-photo img {
@@ -1094,7 +1094,7 @@ body.ao-video-open {
     gap: 28px;
   }
   .about-section .about-photo {
-    height: 285px;
+    height: auto;
   }
   .about-section__statement,
   .about-section__copy {
