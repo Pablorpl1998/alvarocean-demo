@@ -1047,9 +1047,9 @@ body.ao-video-open {
 .about-section__quote p {
   margin: 0;
   color: #f3f2ef;
-  font-family: Georgia, serif;
+  font-family: Satoshi, Arial, sans-serif;
   font-size: clamp(25px, 3vw, 43px);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   line-height: 1.2;
 }
