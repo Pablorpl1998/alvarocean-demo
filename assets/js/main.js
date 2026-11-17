@@ -87,6 +87,62 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* NAVEGACIÓN ACTIVA SEGÚN LA SECCIÓN VISIBLE */
+
+    const navLinks = [...document.querySelectorAll('.ao-nav__link[href^="#"]')];
+    const trackedSections = ["about", "work", "social", "contact"]
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    if (navLinks.length && trackedSections.length) {
+        let activeSection = null;
+        let ticking = false;
+
+        const setActiveNav = (sectionId) => {
+            if (sectionId === activeSection) return;
+            activeSection = sectionId;
+
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute("href") === `#${sectionId}`;
+                link.classList.toggle("is-active", isActive);
+                if (isActive) link.setAttribute("aria-current", "page");
+                else link.removeAttribute("aria-current");
+            });
+        };
+
+        const updateActiveNav = () => {
+            ticking = false;
+            const marker = window.innerHeight * 0.34;
+            let current = null;
+
+            trackedSections.forEach(section => {
+                if (section.getBoundingClientRect().top <= marker) {
+                    current = section.id;
+                }
+            });
+
+            if (current) setActiveNav(current);
+            else {
+                activeSection = null;
+                navLinks.forEach(link => {
+                    link.classList.remove("is-active");
+                    link.removeAttribute("aria-current");
+                });
+            }
+        };
+
+        const requestNavUpdate = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(updateActiveNav);
+        };
+
+        updateActiveNav();
+        window.addEventListener("scroll", requestNavUpdate, { passive: true });
+        window.addEventListener("resize", requestNavUpdate);
+        window.addEventListener("hashchange", requestNavUpdate);
+    }
+
 
     /* ANIMACIONES */
 
