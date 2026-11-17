@@ -1670,3 +1670,20 @@ h1, h2, h3, h4, h5, h6,
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* Evita que iOS convierta el símbolo de reproducción en un emoji azul. */
+.social-card .play-icon {
+  font-size: 0 !important;
+  text-indent: 0;
+  color: transparent !important;
+}
+.social-card .play-icon::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 13px solid #fff;
+}
