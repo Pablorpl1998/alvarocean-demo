@@ -639,7 +639,7 @@ body.ao-video-open {
 }
 
 .ao-weddings__image {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 2;
     background: #071b22;
 }
 
@@ -899,7 +899,7 @@ body.ao-video-open {
   margin: 0;
   color: #f3f2ef;
   font-family: Satoshi, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: .14em;
   line-height: 1.4;
@@ -913,6 +913,15 @@ body.ao-video-open {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+}
+.work-section > .section-heading > .filter-heading {
+  margin: 0;
+  padding: 0;
+  color: #f3f2ef;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  line-height: 1.3;
 }
 
 /* Redes: mismo tratamiento que el título de Trabajos. */
@@ -930,6 +939,104 @@ body.ao-video-open {
   font-size: 12px;
   margin-right: 12px;
 }
+
+/* Galería fotográfica: tres filas de seis imágenes en escritorio. */
+.photo-section {
+  margin-top: 100px;
+  padding-top: 28px;
+  padding-bottom: 38px;
+}
+.photo-section__heading p {
+  max-width: 340px;
+  margin: 0;
+  color: #c6ced1;
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: right;
+}
+.photo-section__heading h2 {
+  margin: 0;
+  color: #f3f2ef;
+  font-family: Satoshi, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .14em;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+}
+.photo-card {
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  overflow: hidden;
+  background: #0b171c;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.03);
+  transition: transform .6s ease, filter .4s ease;
+}
+.photo-card:hover img { transform: scale(1.06); filter: saturate(1) contrast(1.04); }
+
+/* Servicios: imagen a la izquierda y propuesta a la derecha. */
+.ao-services__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  gap: clamp(34px, 6vw, 100px);
+  align-items: center;
+}
+.ao-services__layout .ao-services__feature {
+  aspect-ratio: 2.35;
+  margin: 0;
+}
+.ao-services__content h2 {
+  margin: 12px 0 38px;
+  color: #f3f2ef;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+}
+.ao-services__content .ao-services__list {
+  align-items: flex-end;
+  font-size: 16px;
+}
+
+/* Contacto: enlaces sociales limpios y alineados en el lado derecho. */
+.ao-contact__social-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+  margin: -12px 0 28px;
+}
+.ao-contact__social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #dce7e9;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-decoration: none;
+  transition: color .25s ease, transform .25s ease;
+}
+.ao-contact__social-links a:hover { color: #fff; transform: translateY(-2px); }
+.ao-contact__social-links svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ao-contact__social-links svg .icon-fill { fill: currentColor; stroke: none; }
 
 /* Contacto: el H2 SEO se mantiene visible pero deja espacio al titular visual. */
 .ao-contact .ao-contact__intro > h2 {
@@ -1058,7 +1165,7 @@ body.ao-video-open {
   margin: 0;
   color: #f3f2ef;
   font-family: Satoshi, Arial, sans-serif;
-  font-size: clamp(25px, 3vw, 43px);
+  font-size: 29px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
@@ -1181,6 +1288,13 @@ h1, h2, h3, h4, h5, h6,
 .social-card:hover .play-icon { background: rgba(4,16,20,.68); transform: translate(-50%,-50%) scale(1.08); }
 .ao-footer__logo img { display: block; width: 68px; height: 68px; object-fit: contain; }
 @media (max-width: 640px) {
+  .photo-section { margin-top: 70px; }
+  .photo-section__heading p { text-align: left; }
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .ao-services__layout { grid-template-columns: 1fr; gap: 30px; }
+  .ao-services__content h2 { margin-bottom: 28px; font-size: clamp(48px, 14vw, 76px); line-height: .92; letter-spacing: -2px; }
+  .ao-services__content .ao-services__list { align-items: flex-start; font-size: 14px; }
+  .ao-contact__social-links { justify-content: flex-start; flex-wrap: wrap; margin-top: 0; }
   .ao-video-modal { padding: 12px; }
   .ao-video-modal__dialog { width: 100%; padding: 18px; }
   .ao-video-modal__title { margin-bottom: 15px; }
