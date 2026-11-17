@@ -1150,8 +1150,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero h1 {
-  font-family: Swiss, Satoshi, Arial, sans-serif;
-  text-transform: none;
+  font-family: "Alvarocean Custom", Satoshi, Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 /* Ajustes finales de interacción y responsive */
