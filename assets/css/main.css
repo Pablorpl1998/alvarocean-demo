@@ -1626,6 +1626,20 @@ h1, h2, h3, h4, h5, h6,
   .ao-services__heading h2 { font-size: 18px; line-height: 1.1; letter-spacing: .12em; }
 }
 
+/* Redes sociales del encabezado y footer: iconos SVG blancos y enlaces funcionales. */
+.ao-nav__socials { display: inline-flex; align-items: center; gap: 14px; margin-left: 4px; }
+.ao-nav__socials a { display: inline-flex; color: #fff; line-height: 0; transition: color .25s ease, transform .25s ease; }
+.ao-nav__socials a:hover { color: #b8d0d8; transform: translateY(-2px); }
+.ao-nav__socials svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ao-nav__socials svg .icon-fill, .ao-footer__social-link svg .icon-fill { fill: currentColor; stroke: none; }
+.ao-footer__social-link { display: inline-flex; align-items: center; gap: 9px; }
+.ao-footer__social-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ao-footer__social-link--ingravida { gap: 7px; }
+@media (max-width: 767px) {
+  .ao-nav__socials { margin: 12px 0 0; gap: 18px; }
+  .ao-nav__socials svg { width: 23px; height: 23px; }
+}
+
 @media (min-width: 768px) {
   .ao-services__content { width: 40%; padding-left: 32px; }
   .ao-services__list { margin-top: 40px; gap: 16px; }
