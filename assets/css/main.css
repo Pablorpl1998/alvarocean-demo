@@ -111,6 +111,28 @@
   .ao-services__list { margin-top: 12px; padding-top: 8px; }
 }
 
+/* Ajuste final: la imagen es protagonista y el contenido se monta solo parcialmente. */
+@media (min-width: 768px) {
+  .ao-services__layout { display: block; min-height: clamp(500px, 39vw, 650px); }
+  .ao-services__layout .ao-services__feature { width: min(84%, 1180px); aspect-ratio: 1.72; }
+  .ao-services__content {
+    position: absolute; top: 12%; right: 0; width: min(390px, 34%); min-height: auto; margin: 0;
+    padding: 32px 0 32px 40px; background: linear-gradient(90deg, rgba(3,8,10,.97), rgba(3,8,10,.94));
+  }
+  .ao-services__copy { max-width: 360px; font-size: 13px; line-height: 1.6; }
+  .ao-services__copy p { margin-bottom: 20px; }
+  .ao-services__list { gap: 0; margin-top: 22px; padding-top: 0; }
+  .ao-services__list li { display: flex; min-height: 36px; align-items: center; gap: 14px; border-top: 1px solid rgba(157,181,190,.24); }
+  .ao-services__list li:last-child { border-bottom: 1px solid rgba(157,181,190,.24); }
+  .ao-services__list li i { flex: 0 0 24px; width: 24px; background: #a6c4ce; }
+  .ao-services__list li strong { font-size: 11px; letter-spacing: .12em; }
+}
+@media (max-width: 767px) {
+  .ao-services__layout { min-height: 0; }
+  .ao-services__layout .ao-services__feature { width: 100%; }
+  .ao-services__content { position: static; width: auto; }
+}
+
 /* Servicios: encabezado alineado arriba y texto con solape sutil en escritorio. */
 .ao-services__heading { margin-bottom: 30px; }
 .ao-services__heading h2 { margin: 18px 0 0; max-width: 760px; color: #f3f2ef; font-size: clamp(48px, 7vw, 100px); font-weight: 700; line-height: .9; letter-spacing: -4px; text-transform: uppercase; }
@@ -128,6 +150,50 @@
   .ao-services__layout { grid-template-columns: 1fr; gap: 26px; }
   .ao-services__content { margin-left: 0; padding: 0; background: none; }
   .ao-services__list { margin-top: 12px; padding-top: 8px; }
+}
+
+/* Ajuste final: la imagen es protagonista y el contenido se monta solo parcialmente. */
+@media (min-width: 768px) {
+  .ao-services__layout {
+    display: block;
+    min-height: clamp(500px, 39vw, 650px);
+  }
+  .ao-services__layout .ao-services__feature {
+    width: min(84%, 1180px);
+    aspect-ratio: 1.72;
+  }
+  .ao-services__content {
+    position: absolute;
+    top: 12%;
+    right: 0;
+    width: min(390px, 34%);
+    min-height: auto;
+    margin: 0;
+    padding: 32px 0 32px 40px;
+    background: linear-gradient(90deg, rgba(3,8,10,.97), rgba(3,8,10,.94));
+  }
+  .ao-services__copy { max-width: 360px; font-size: 13px; line-height: 1.6; }
+  .ao-services__copy p { margin-bottom: 20px; }
+  .ao-services__list {
+    gap: 0;
+    margin-top: 22px;
+    padding-top: 0;
+  }
+  .ao-services__list li {
+    display: flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid rgba(157,181,190,.24);
+  }
+  .ao-services__list li:last-child { border-bottom: 1px solid rgba(157,181,190,.24); }
+  .ao-services__list li i { flex: 0 0 24px; width: 24px; background: #a6c4ce; }
+  .ao-services__list li strong { font-size: 11px; letter-spacing: .12em; }
+}
+@media (max-width: 767px) {
+  .ao-services__layout { min-height: 0; }
+  .ao-services__layout .ao-services__feature { width: 100%; }
+  .ao-services__content { position: static; width: auto; }
 }
 
 /* Servicios: encabezado alineado arriba y texto con solape sutil en escritorio. */
