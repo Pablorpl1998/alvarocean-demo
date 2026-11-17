@@ -25,7 +25,7 @@ Text Domain: alvarocean
 
 @font-face {
     font-family: "Alvarocean Custom";
-    src: url("../fonts/alvarocean_custom.woff") format("woff");
+    src: url("../fonts/alvarocean_custom_fixed.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
