@@ -1154,6 +1154,14 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
 }
 
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: clamp(28px, 9.5vw, 44px);
+    letter-spacing: .18em;
+    padding-left: .18em;
+  }
+}
+
 /* Ajustes finales de interacción y responsive */
 .social-card .play-icon {
   inset: 50% auto auto 50%;
