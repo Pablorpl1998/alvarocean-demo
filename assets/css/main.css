@@ -111,6 +111,21 @@
   .ao-services__list { margin-top: 12px; padding-top: 8px; }
 }
 
+/* Referencia editorial: imagen amplia, texto abierto y lista numerada. */
+@media (min-width: 768px) {
+  .ao-services__layout { min-height: clamp(520px, 42vw, 700px); }
+  .ao-services__layout .ao-services__feature { width: min(76%, 1220px); aspect-ratio: 1.58; }
+  .ao-services__layout .ao-services__feature::after { background: linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.04) 70%, rgba(0,0,0,.38)); }
+  .ao-services__content { top: 13%; right: 0; width: 39%; padding: 0 0 0 30px; background: transparent; }
+  .ao-services__copy { max-width: 465px; color: #f3f2ef; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.62; letter-spacing: .015em; }
+  .ao-services__copy p { margin-bottom: 25px; }
+  .ao-services__list { gap: 15px; margin-top: 68px; padding-top: 0; }
+  .ao-services__list li { display: grid; grid-template-columns: 28px 24px 1fr; min-height: 20px; gap: 10px; border: 0; }
+  .ao-services__list li span { color: #f3f2ef; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; }
+  .ao-services__list li i { width: 18px; background: #9ea8aa; }
+  .ao-services__list li strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; font-weight: 400; letter-spacing: .09em; }
+}
+
 /* Ajuste final: la imagen es protagonista y el contenido se monta solo parcialmente. */
 @media (min-width: 768px) {
   .ao-services__layout { display: block; min-height: clamp(500px, 39vw, 650px); }
@@ -131,6 +146,59 @@
   .ao-services__layout { min-height: 0; }
   .ao-services__layout .ao-services__feature { width: 100%; }
   .ao-services__content { position: static; width: auto; }
+}
+
+/* Referencia editorial: imagen amplia, texto abierto y lista numerada. */
+@media (min-width: 768px) {
+  .ao-services__layout { min-height: clamp(520px, 42vw, 700px); }
+  .ao-services__layout .ao-services__feature {
+    width: min(76%, 1220px);
+    aspect-ratio: 1.58;
+  }
+  .ao-services__layout .ao-services__feature::after {
+    background: linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.04) 70%, rgba(0,0,0,.38));
+  }
+  .ao-services__content {
+    top: 13%;
+    right: 0;
+    width: 39%;
+    padding: 0 0 0 30px;
+    background: transparent;
+  }
+  .ao-services__copy {
+    max-width: 465px;
+    color: #f3f2ef;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.62;
+    letter-spacing: .015em;
+  }
+  .ao-services__copy p { margin-bottom: 25px; }
+  .ao-services__list {
+    gap: 15px;
+    margin-top: 68px;
+    padding-top: 0;
+  }
+  .ao-services__list li {
+    display: grid;
+    grid-template-columns: 28px 24px 1fr;
+    min-height: 20px;
+    gap: 10px;
+    border: 0;
+  }
+  .ao-services__list li span {
+    color: #f3f2ef;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+  }
+  .ao-services__list li i { width: 18px; background: #9ea8aa; }
+  .ao-services__list li strong {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .09em;
+  }
 }
 
 /* Servicios: encabezado alineado arriba y texto con solape sutil en escritorio. */
