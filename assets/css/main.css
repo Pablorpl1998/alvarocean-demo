@@ -1625,3 +1625,11 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 767px) {
   .ao-services__heading h2 { font-size: 18px; line-height: 1.1; letter-spacing: .12em; }
 }
+
+@media (min-width: 768px) {
+  .ao-services__content { width: 40%; padding-left: 32px; }
+  .ao-services__list { margin-top: 40px; gap: 16px; }
+  .ao-services__list li { min-height: 23px; }
+  .ao-services__list li span,
+  .ao-services__list li strong { font-size: 13px; }
+}
