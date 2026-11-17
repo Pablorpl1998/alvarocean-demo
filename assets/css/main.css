@@ -1647,3 +1647,7 @@ h1, h2, h3, h4, h5, h6,
   .ao-services__list li span,
   .ao-services__list li strong { font-size: 13px; }
 }
+
+@media (min-width: 768px) {
+  .ao-services__copy { font-size: 15px; line-height: 1.58; }
+}
